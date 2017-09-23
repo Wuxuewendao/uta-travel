@@ -1,0 +1,188 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <title>基本资料 联途用户中心</title>
+            <link rel="shortcut icon" href="http://static.liantu.cn/image/public/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="__index__/css/common8.css"/>
+        <link rel="stylesheet" type="text/css" href="__index__/css/index8.css"/>
+        <!-- <script type="text/javascript">
+        var TU = {
+            myUrl: 'http://my.liantu.cn',
+            wwwUrl: 'http://www.liantu.cn'
+        };
+    </script> -->
+</head>
+<body>
+
+<div class="header">
+    <div class="top-bg"></div>
+
+    <div class="mod-head">
+        <a href="{:url('index/index')}" class="logo"><img src="__index__/picture/logo.png" alt="uta"/></a>
+
+                {if condition="$userinfos['status'] eq 1"}
+                <div class="link"><a href="{:url('User/sqym')}" rel="nofollow" target="_blank">申请成为向导</a>
+                </div>
+                {/if}
+
+
+                <div class="login pl-login-info" id="pl-login-info">
+                    <div class="name">
+                                <img width="40" height="40" alt="" src="__index__/uploads/{$userinfos.portrait}"><span class="name-text">{$userinfos.uname} </span><span
+                    class="ico"></span></div>
+            <div class="list">
+                <div class="ico"></div>
+                <div class="login-box">
+                <div class="bg"></div>
+                <p>
+                                        <a href="{:url('User/xxxgy')}">个人信息</a>
+
+                                        <a href="{:url('User/logout')}" class="js-pl-logout">退出</a>
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="home">
+        <a href="{:url('index/index')}">
+            <span class="plus"></span>返回首页
+        </a></div>
+    <div class="wrap">
+        <div class="side">
+            <div class="avatar">
+                <img src="__index__/uploads/{$userinfos.portrait}" alt="用户中心"/>
+
+                <p><span class="usr-name">{$userinfos.uname} {if condition="$userinfos['status'] eq 2"} <span  style="font-size: 13px;"> 导游</span>{/if}</span>
+                    <span class="gender male "></span>
+                </p>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="{:url('User/xxxgy')}" class="info">基本信息</a>
+
+                    <div class="sub-menu">
+                        <p><a href="{:url('User/ghtx')}" class="sc2">更换头像</a></p>
+
+                        <p><a href="{:url('User/change')}" class="sc2">修改密码</a></p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+<div class="content">
+    <h2>基本信息</h2>
+    <ul class="mod-box">
+        <form action="{:url('User/xxxgy')}" method="post">
+        <li class="inpt inpt-box">
+            <label>昵称：</label>
+            <input type="text" class="text nickname" name="uname" class="info-name" value="{$userinfos.uname}" placeholder="" />
+        </li>
+        <li class="inpt inpt-sex">
+            <label>性别：</label>
+            <div class="sex">
+                <span><input type="radio" name="sex" {if condition="$userinfos['sex'] eq 1"} checked="checked" {/if} value="1"/>男士</span>
+                <span><input type="radio" name="sex" {if condition="$userinfos['sex'] eq 2"} checked="checked" {/if} value="2"/>女士</span>
+            </div>
+        </li>
+        <li class="inpt inpt-box">
+            <label>个性签名：</label>
+            <input type="text" class="text nickname" name="sign" class="info-name" value="{$userinfos.sign}" placeholder="" />
+        </li>
+
+        <li class="btn">
+            <input type="submit" class="set" value="保存" title="保存"/>
+        </li>
+        </form>
+    </ul>
+</div>
+</div>
+</div>
+<div class="footer">
+            <div class="mod-back">
+
+                <a href="javascript:" class="code" id="code">
+                </a>
+                <a href="/" class="customer">
+                </a>
+                <a href="#" class="goback">
+                </a>
+            </div>
+            <div class="mod-foot">
+                <div class="info">
+                    <div class="contact">
+                        <p class="logo">
+                            <a href="/">
+                                <img src="picture/logo.png" alt="联途" width="136" height="50"/>
+                            </a>
+                            <span>
+                                同行之路，有你才有意义
+                            </span>
+                        </p>
+                        <p class="tell">
+                            18018961046
+                        </p>
+                        <p>
+                            24小时服务热线
+                        </p>
+                    </div>
+                    <dl>
+                        <dt>
+                            公司信息
+                        </dt>
+                        <dd><a href="{:url('About/guanyu')}" target="_blank"  rel="nofollow">关于我们</a></dd>
+<dd><a href="{:url('About/mianze')}" target="_blank"  rel="nofollow">免责声明</a></dd>
+<dd><a href="{:url('About/lianxi')}" target="_blank"  rel="nofollow">联系我们</a></dd>
+<dd><a href="{:url('About/joinus')}" target="_blank" rel="nofollow">加入我们</a></dd>
+                    </dl>
+                   <!--  <dl>
+                        <dt>
+                            帮助中心
+                        </dt>
+                        <dd>
+                            <a href="http://www.liantu.cn/about/userprotocol/" target="_blank"  rel="nofollow">
+                                用户协议
+                            </a>
+                        </dd>
+                    </dl> -->
+                </div>
+                <div class="copyright">
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">
+                        闽ICP备15007411号-1
+                    </a>
+                    Copyright &copy; 2017 liantu.cn, All Rights Reserved stat
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="http://static.liantu.cn/script/dist/lib/jquery.seajs.js" id="seajsnode"></script>
+
+<!-- <script type="text/javascript">
+    seajs.config({
+        base: 'http://static.liantu.cn/script/dist',
+        paths: {
+            'modules': 'http://static.liantu.cn/script/dist'
+        },
+        map: [
+            [/^(.*?\/script\/(?:src|dist)\/.*?\/.*?\.js$)(?:.*)$/i, '$1?version=v1']
+        ],
+        charset: 'utf-8'
+    });
+
+    seajs.use('modules/my/common/common.js');
+
+            seajs.use('modules/my/member/profile/index.js');
+        </script> -->
+<!-- <div class="hide">
+    <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?7fb2d3d6f0b9e008b1e5a7fee7b07e3b";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script></div> -->
+</body>
+</html>

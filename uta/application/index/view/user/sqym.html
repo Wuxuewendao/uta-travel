@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="renderer" content="webkit"/>
+        <title>
+            申请向导 申请成为向导 联途导游申请 联途
+        </title>
+        <link rel="shortcut icon" href="http://static.liantu.cn/image/public/favicon.ico"/>
+        <meta http-equiv="Cache-Control" content="no-transform"/>
+        <link rel="stylesheet" type="text/css" href="__index__/css/common_2.css"/>
+        <link rel="stylesheet" type="text/css" href="__index__/css/form.css"/>
+        <!--
+            <script type="text/javascript">
+                var TU = {
+                wwwUrl: 'http://www.liantu.cn',
+                myUrl: 'http://my.liantu.cn',
+                imageUrl: 'http://static.liantu.cn/image/',
+                domain: '',
+                today: '2017-06-07'
+                };
+                var isMobi = (function(){
+                var u = navigator.userAgent.toLowerCase();
+                return  u.indexOf("mobi") >
+                0 || u.indexOf("nexus 7") >
+                0 || u.indexOf("480") >
+                0;
+                })();
+                PL = {
+                'MID':0    }
+            </script>
+        -->
+        <script type="text/javascript" id="js-prelogin" src="__index__/js/cas.js">
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="top-bg">
+            </div>
+            <div class="mod-head">
+                <a href="" class="logo">
+                    <img src="__index__/picture/logo.png" alt="联途"/>
+                </a>
+
+            </div>
+        </div>
+        <div class="warpper">
+            <div class="container">
+                <div class="mod-form">
+                    <form  method="post" action="{:url('sqym')}" class="apply"  enctype='multipart/form-data'>
+                        <div class="info-form">
+                            <div class="info">
+                                <label>
+                                    基本信息
+                                </label>
+                                <p>
+                                    我们会严格保护您的个人隐私
+                                </p>
+                            </div>
+                            <div class="form">
+                                <ul>
+                                    <li>
+                                        <label class="title">
+                                            姓名 *
+                                        </label>
+                                        <input type="text" name="tname" class="input-text " maxlength="10" value="" required/>
+                                    </li>
+
+                                    <li>
+                                        <label class="title">
+                                            地区(对外公开)*
+                                        </label>
+                                        <input type="text" name="address" class="input-text "  value="" placeholder="xx省xx市" required/>
+                                    </li>
+                                    <li>
+                                        <label class="title">
+                                            就读大学 *
+                                        </label>
+                                        <input type="text" name="university" class="input-text "  value="" placeholder="xxxx大学" required/>
+                                    </li>
+                                    <li>
+                                        <label class="title">
+                                            个人简介(对外公开) *
+                                        </label>
+                                       <textarea class="input-text " name="jianjie" id="" cols="30" rows="10" required></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact line">
+                            <div class="info">
+                                <label>
+                                    联系方式
+                                </label>
+                                <p>
+                                    我们会严格保护您的个人隐私
+                                </p>
+                            </div>
+                            <div class="contact-main">
+                                <ul>
+                                    <li>
+                                        <label class="title">
+                                            手机 *
+                                        </label>
+
+                                        <input type="text" class="input-text" name="tel" maxlength="11" value="" required/>
+                                    </li>
+                                    <li>
+                                        <label class="title">
+                                            QQ(对外公开) *
+                                        </label>
+                                        <input type="text" class="input-text " name="qq" maxlength="10" value="" required/>
+                                    </li>
+                                    <li>
+                                        <label class="title">
+                                            微信 *
+                                        </label>
+                                        <input type="text" class="input-text " name="wechat" value="" required/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="text-align: center;margin-bottom:10px;margin-left:-105px;">
+                            <button value="" type="submit"  style="background-image: linear-gradient(top,#ffcc00,#ff99cc);
+                                  border:1px #9933ff solid;
+                                  border-radius:4px;
+                                  padding:8px 18px;
+                                  font-size;15px;"/>
+                                  提交审核</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="mod-back">
+
+                <a href="javascript:" class="code" id="code">
+                </a>
+                <a href="/" class="customer">
+                </a>
+                <a href="#" class="goback">
+                </a>
+            </div>
+            <div class="mod-foot">
+                <div class="info">
+                    <div class="contact">
+                        <p class="logo">
+                            <a href="/">
+                                <img src="picture/logo.png" alt="联途" width="136" height="50"/>
+                            </a>
+                            <span>
+                                同行之路，有你才有意义
+                            </span>
+                        </p>
+                        <p class="tell">
+                            18018961046
+                        </p>
+                        <p>
+                            24小时服务热线
+                        </p>
+                    </div>
+                    <dl>
+                        <dt>
+                            公司信息
+                        </dt>
+                        <dd><a href="{:url('About/guanyu')}" target="_blank"  rel="nofollow">关于我们</a></dd>
+<dd><a href="{:url('About/mianze')}" target="_blank"  rel="nofollow">免责声明</a></dd>
+<dd><a href="{:url('About/lianxi')}" target="_blank"  rel="nofollow">联系我们</a></dd>
+<dd><a href="{:url('About/joinus')}" target="_blank" rel="nofollow">加入我们</a></dd>
+                    </dl>
+                   <!--  <dl>
+                        <dt>
+                            帮助中心
+                        </dt>
+                        <dd>
+                            <a href="http://www.liantu.cn/about/userprotocol/" target="_blank"  rel="nofollow">
+                                用户协议
+                            </a>
+                        </dd>
+                    </dl> -->
+                </div>
+                <div class="copyright">
+                    <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">
+                        闽ICP备15007411号-1
+                    </a>
+                    Copyright &copy; 2017 liantu.cn, All Rights Reserved stat
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.seajs.js" id="seajsnode">
+    </script>
+    <!--
+        <script type="text/javascript">
+            seajs.config({
+            base: 'http://static.liantu.cn/script/dist',
+            paths: {
+            'modules': 'http://static.liantu.cn/script/dist'
+            },
+            map: [
+            [/^(.*?\/script\/(?:src|dist)\/.*?\/.*?\.js$)(?:.*)$/i, '$1?version=v1']
+            ],
+            charset: 'utf-8'
+            });
+            seajs.use('modules/my/common/common.login.js');
+            seajs.use('modules/my/merchant/apply/form.js');
+        </script>
+    -->
+    <div class="hide">
+        <script>
+            var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?7fb2d3d6f0b9e008b1e5a7fee7b07e3b";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();
+        </script>
+    </div>
+</body>
+</html>

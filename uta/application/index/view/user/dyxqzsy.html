@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>导游信息展示页面</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.liantu.cn/tongyou/154.html">
+<meta name="keywords" content="导游信息展示">
+<meta name="description" content="导游信息展示">
+<meta http-equiv="Cache-Control" content="no-transform">
+<!-- <link rel="shortcut icon" href="http://static.liantu.cn/image/public/favicon.ico"> -->
+<link rel="stylesheet" type="text/css" href="__index__/css/common.css">
+<link rel="stylesheet" type="text/css" href="__index__/css/detail.css">
+<!-- 网络字体库 -->
+<script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+<!-- <script type="text/javascript">
+var TU={
+wwwUrl:'http://www.liantu.cn',
+myUrl:'http://my.liantu.cn',
+imageUrl:'http://static.liantu.cn/image/',
+domain:'liantu.cn',
+today:'2017-06-10',
+mobile_agent:'http://m.liantu.cn/tongyou/154.html'
+};
+var isMobi = (function(){
+var u = navigator.userAgent.toLowerCase();
+return  u.indexOf("mobi") > 0 || u.indexOf("nexus 7") > 0 || u.indexOf("480") > 0;
+})();
+if(isMobi&&TU.mobile_agent!=''){
+location.href = TU.mobile_agent;
+}
+</script> -->
+<script type="text/javascript" id="js-prelogin" src="__index__/js/cas.js"></script>
+<script type="text/javascript" src="__index__/js/jquery.seajs.js" id="seajsnode"></script>    <!--[if lte IE 8]>
+<script type="text/javascript">
+$(function(){
+var $body=$('body');
+var $window =  $(window);
+$window.resize(function() {
+var width = $window.width();
+if(width<768){
+$body.addClass("media-small").removeClass("media-medium");
+}else if(width<1300){
+$body.addClass("media-medium").removeClass("media-small");
+}else{
+$body.removeClass("media-small").removeClass("media-medium");
+}
+}).resize();
+});
+</script>
+<![endif]-->
+</head>
+<body>
+<script type="text/javascript">
+$youziku.load(".zitiku", "6e86175820f9474f8e3475fbda761e48", "LiDeBiao-Xing3");
+ $youziku.draw();
+</script>
+<div class="wrapper">
+<div class="header">
+<div class="mod-head">
+<div class="bg"></div>
+<div class="box">
+<div class="logo"><a href="{:url('index/index')}"><img src="__index__/picture/logo.png" alt="联途"/></a></div>
+<!-- <div class="J_search search">
+<div class="sbox">
+<input type="text" class="text" placeholder="输入想去的地方（例如：北京）"/>
+<span class="ico"><span></span></span>
+</div>
+</div> -->
+<div class="login pl-login-info" id="pl-login-info"></div>
+</div>
+</div>
+</div><div class="container">
+<div class="inner">
+<div class="main">
+<div class="mod-crumbs">
+<a href="{:url('index/index')}">首页</a>
+<span class="symbol"> &gt; </span>
+<a href="{:url('User/dyzsy')}">导游</a>
+</div>
+<div class="mod-content" data-mateid="154">
+<img  class="head" src="__index__/uploads/{$dyxqzsy.portrait}" alt=""/>
+<div class="hd">
+<p>{$dyxqzsy.uname}       <span {if condition="$dyxqzsy['sex'] eq 1"}class="sex male "{else/} class="sex female " {/if}>
+</span>
+</p>
+<span class="location">{$dyxqzsy.address}</span>
+</div>
+<div class="bd">
+<h3 style="font-size:20px;" class="zitiku">{$dyxqzsy.sign}
+</h3>
+<p class="subtit">大学：{$dyxqzsy.university}</p>
+<div class="date">
+<p style="font-family:微软雅黑;font-size:20px;margin-top: -2px;">
+QQ:{$dyxqzsy.qq}
+</p>
+</div>
+<div class="detail">
+<div class="hd">
+个人简介:
+</div>
+<div class="bd" style="margin-top: -10px;">
+{$dyxqzsy.jianjie}
+</div>
+<span class="line"></span>
+</div>
+</div>
+</div>
+<div class="mod-mask"></div>
+<div class="mod-share">
+<!-- 百度分享插件 -->
+<p>分享到：</p>
+<div class="bdsharebuttonbox">
+</div>
+</div>
+
+
+<div class="box-hot">
+<div class="mod-raiders mod-hot">
+<div class="hd">
+<span class="tit">热门<a href="{:url('Lygl/lyglyl')}" target="_blank">旅游攻略</a></span>
+<span>/</span>
+<a href="{:url('Lygl/lyglyl')}" class="hmore" target="_blank"  title="旅游攻略">更多</a>
+</div>
+<div class="bd">
+<div class="raiders">
+<ul>
+
+{volist name="glArts" id="gl"}
+    <li>
+    <p>
+    <a href="#" class="tag" target="_blank">
+        {if condition="$gl['type'] eq 1"}
+            游玩攻略
+        {elseif condition="$gl['type'] eq 2"}
+            美食攻略
+        {elseif condition="$gl['type'] eq 3"}
+            住宿攻略
+        {else /}
+            购物攻略
+        {/if}
+
+    </a>
+    <a href="{:url('Lygl/index',array('id'=>$gl['id']))}" target="_blank">{$gl.title}</a>
+    </p>
+    <span>目的地：{$gl.destination}</span>
+    </li>
+{/volist}
+
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="mod-spot mod-hot">
+<div class="hd">
+<span class="tit">热门<a href="{:url('jd/jdyly')}" target="_blank">旅游景点</a></span>
+<span>/</span>
+<a href="{:url('jd/jdyly')}" class="hmore" target="_blank" title="旅游景点">更多</a>
+</div>
+<div class="bd">
+<div class="spot">
+<ul>
+
+{volist name="dbjdArts" id="dbjd"}
+    <li>
+    <a href="{:url('jd/jdzs',array('id'=>$dbjd['id']))}" target="_blank">{$dbjd.jdname}</a>
+    <span class="address">{$dbjd.address}</span>
+    </li>
+{/volist}
+
+
+
+</ul>
+</div>
+</div>
+</div>                                            </div>
+</div>
+</div>
+<div class="footer">
+<div class="mod-back">
+<a href="javascript:" class="code" id="code"></a>
+<a href="/" class="customer"></a>
+<a href="#" class="goback"></a>
+</div>
+<div class="mod-foot">
+<div class="info">
+<div class="contact">
+<p class="logo">
+<a href="{:url('index/index')}"><img src="__index__/picture/logo.png" alt="uta" width="136" height="50"/></a>
+<span>同行之路，有你才有意义</span>
+</p>
+<p class="tell">18018961046</p>
+<p>24小时服务热线</p>
+</div>
+<dl>
+<dt>公司信息</dt>
+<dd><a href="{:url('About/guanyu')}" target="_blank"  rel="nofollow">关于我们</a></dd>
+<dd><a href="{:url('About/mianze')}" target="_blank"  rel="nofollow">免责声明</a></dd>
+<dd><a href="{:url('About/lianxi')}" target="_blank"  rel="nofollow">联系我们</a></dd>
+<dd><a href="{:url('About/joinus')}" target="_blank" rel="nofollow">加入我们</a></dd>
+</dl>
+<!-- <dl>
+<dt>帮助中心</dt>
+<dd><a href="/about/userprotocol/" target="_blank"  rel="nofollow">用户协议</a></dd>
+<dd><a href="/about/safetyassurance/" target="_blank"  rel="nofollow">安全保障</a></dd>
+<dd><a href="/about/bookingprocess/" target="_blank"  rel="nofollow">预定流程</a></dd>
+</dl> -->
+<!-- <dl class="app">
+<dt>发现</dt>
+<dd><a href="/app/" target="_blank">Android客户端</a></dd>
+<dd><a href="/app/" target="_blank">iOS客户端</a></dd>
+<dd><a href="/app/huilv/" target="_blank">联途汇率</a></dd>
+<dd><a href="/app/tongyou/" target="_blank">联途同游</a></dd>
+</dl> -->
+</div>
+<div class="linker">
+友情链接：
+<a href="http://www.dlmu.edu.cn/" target="_blank">大连海事大学</a>
+<!-- <a href="http://www.shoujimi.com/" target="_blank"></a>
+<a href="http://zhidao.3533.com/" target="_blank">手机知道</a>
+<a href="http://10.ip138.com/" target="_blank">十大品牌排行榜</a>
+<a href="https://www.dianchacha.com/" target="_blank">淘宝店铺监控</a> --></div>
+<div class="copyright">
+<!-- <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">闽ICP备15007411号-1</a> -->
+Copyright &copy; 2017 uta旅游网, All Rights Reserved stat
+</div>
+</div>
+<div class="mod-mfoot">
+<div class="info">
+<ul>
+<!-- <li><a href="{:url('About/guanyu')}" target="_blank"  rel="nofollow">关于我们</a></li> -->
+<!-- <li><a href="http://my.liantu.cn/merchant/apply/" target="_blank"  rel="nofollow">申请成为向导</a></li>
+<li><a href="/app/" target="_blank"  rel="nofollow">APP下载</a></li> -->
+</ul>
+<div class="contact">
+<p class="logo">
+<a href="/"><img src="__index__/picture/logo.png" alt="uta" width="100"/></a>
+</p>
+<!-- <p class="tell">18018961046</p> -->
+</div>
+</div>
+<div class="copyright">
+Copyright &copy; 2017 uta旅游网
+</div>
+</div>
+</div>
+</div>
+<!-- <script type="text/javascript">
+(function(){
+var $info3 = $('.pl-login-info');
+PL.init({
+domain:'http://my.liantu.cn',
+callback:function(nickName,html){
+!PL.MID ? (function () {
+html.push('<div class="info"><a href="javascript:;" onclick="TU.login();">登录</a></div>');
+})() : (function () {
+var num=PL.type?(PL.merchantlaunchordernum+PL.merchantordernum):PL.memberordernum;
+html.push('<div class="user">'+(num>0?'<span class="num"><span>'+num+'</span></span>':'')+'<img src="'+PL.avatar+'" alt="' + nickName + '" width="40" height="40"/><span class="name">' + nickName + '</span><span class="ico"></span></div>');
+if(PL.type){
+html.push('\
+<div class="list">\
+<div class="ico"></div>\
+<ul>\
+<li class="d-pc"><a href="http://my.liantu.cn/merchant/">商户信息</a></li>\
+<li><a href="http://my.liantu.cn/merchant/order/reserve/">'+(PL.merchantlaunchordernum?'<span class="num"><span>'+PL.merchantlaunchordernum+'</span></span>':'')+'预约管理</a></li>\
+<li><a href="http://my.liantu.cn/merchant/order/">'+(PL.merchantordernum?'<span class="num"><span>'+PL.merchantordernum+'</span></span>':'')+'订单管理</a></li>\
+<li class="d-m"><a href="http://my.liantu.cn/merchant/account/">我的钱包</a></li>\
+<li class="d-m"><a href="/banyou/">伴游</a></li>\
+<li class="d-m"><a href="/daoyou/">导游</a></li>\
+<li class="d-m"><a href="/tongyou/">同游</a></li>\
+<li class="d-pc"><a href="javascript:;" onclick="TU.logout();">退出</a></li>\
+</ul>\
+</div>');
+}else{
+html.push('\
+<div class="list">\
+<div class="ico"></div>\
+<ul>\
+<li class="d-pc"><a href="http://my.liantu.cn/member/">个人信息</a></li>\
+<li><a href="http://my.liantu.cn/member/order/">'+(PL.memberordernum>0?'<span class="num"><span>'+PL.memberordernum+'</span></span>':'')+'我的订单</a></li>\
+<li><a href="http://my.liantu.cn/member/travel/createlist/">我的同游</a></li>\
+<li class="d-m"><a href="http://my.liantu.cn/member/account/">我的钱包</a></li>\
+<li class="d-m"><a href="/banyou/">伴游</a></li>\
+<li class="d-m"><a href="/daoyou/">导游</a></li>\
+<li class="d-m"><a href="/tongyou/">同游</a></li>\
+<li class="d-pc"><a href="javascript:" onclick="TU.logout();">退出</a></li>\
+</ul>\
+</div>');
+}
+})();
+if (!pl_status &&!PL.type) {
+var div=document.createElement('div');
+div.className='link';
+div.innerHTML='<a href="http://my.liantu.cn/merchant/apply/" target="_blank">申请成为向导</a>';
+var $info=document.getElementById('pl-login-info');
+if($info){
+$info.parentNode.insertBefore(div,$info);
+}
+}
+pl_status=1;
+}
+});
+})();
+var pl_status=0;
+</script> -->
+<script type="text/javascript" src="__index__/js/75bf2fbc1cbe498496b01a7416f8f487.js"></script>
+<!-- <script type="text/javascript">
+seajs.config({
+base: 'http://static.liantu.cn/script/dist',
+paths: {
+'modules': 'http://static.liantu.cn/script/dist'
+},
+map: [
+[/^(.*?\/script\/(?:src|dist)\/.*?\/.*?\.js$)(?:.*)$/i, '$1?version=v1']
+],
+charset: 'utf-8'
+});
+seajs.use('modules/www/public/common.js');
+seajs.use('modules/www/travel/detail.js');
+</script> -->
+<!-- <div class="hide">
+<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?7fb2d3d6f0b9e008b1e5a7fee7b07e3b";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script></div> -->

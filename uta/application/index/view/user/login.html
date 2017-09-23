@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>
+           {if condition="$rl[0] eq 2"} 登录 {else/} 注册{/if}uta
+        </title>
+        <!-- 网站描述 -->
+        <meta name="description" content="uta旅游网"/>
+        <!-- 网站图标 -->
+        <!-- <link rel="icon" href="#图片链接"/> -->
+        <!-- 网站关键词 -->
+        <meta name="keywords" content="uta旅游网" />
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+        <!-- 引入jquery文件 -->
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+        </script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+        <style>
+            body{
+            font-family:  "Microsoft YaHei";
+            }
+        </style>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">
+            </script>
+            <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+            </script>
+        <![endif]-->
+    </head>
+    <body>
+	<div class="container">
+            <div class="row">
+                <!-- 左侧图片和文字提示区 -->
+                <div class="col-lg-7 col-md-6 col-sm-5 hidden-xs">
+                    <img src="#" alt="欢迎来到uta网" />
+                </div>
+                <!-- 左侧结束 -->
+                <!-- 右侧登录和注册区 -->
+                <div class="col-lg-5 col-md-6 col-sm-7"  style="margin-top:60px;">
+                    <!-- Nav tabs -->
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                登录
+                            </a>
+                        </li>
+                        <li role="presentation"  >
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                注册
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- 登录 -->
+                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                            <form  action="{:url('User/login')}" role="form" method="post" id="denglu">
+                                <div class="form-group">
+                                    <label for="email">
+                                        邮箱
+                                    </label>
+                                    <input type="email" class="form-control"  placeholder="请输入邮箱"  required="required" name="email"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">
+                                        密码
+                                    </label>
+                                    <input type="password" name="password"  class="form-control" placeholder="请输入密码"/>
+                                </div>
+                                <button type="submit" class="btn btn-default" >
+                                    登录
+                                </button>
+                            </form>
+                        </div>
+                        <!-- 登录结束 -->
+                        <!-- 注册 -->
+                        <div role="tabpanel" class="tab-pane fade" id="profile">
+                            <form  action="{:url('reg')}" role="form" method="post" >
+                                <div class="form-group">
+                                    <label for="email">
+                                        邮箱
+                                    </label>
+                                    <input type="email" class="form-control"  placeholder="请输入邮箱" name="email"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">
+                                        密码
+                                    </label>
+                                    <input type="password" class="form-control"  placeholder="请输入密码" name="password"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dopassword">
+                                        确认密码
+                                    </label>
+                                    <input type="password" class="form-control"  placeholder="请再次输入密码" name="dopassword"/>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="accept" checked="checked"/>
+                                        我已经认真阅读并同意《
+                                        <a   data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            uta网服务协议
+                                        </a>
+                                        》。
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="well">
+                                                这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容,这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容, 这里是协议内容,
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-default">
+                                    注册
+                                </button>
+                            </form>
+                        </div>
+                        <!-- 注册结束 -->
+                    </div>
+                </div>
+                <!-- 右侧结束 -->
+            </div>
+        </div>
+        <!-- 底部区域 -->
+        <footer class="navbar hidden-lg" >
+            <div class="container  " >
+
+                <p class="text-center" style="margin-top:-10px;">
+                    Copyright &copy; 2017 uta旅游网网
+                </p>
+                <!-- <p class="text-center" style="margin-top:-10px;">
+                    辽ICP备xxxxxxxx号&nbsp;&nbsp;技术支持:林夕
+                </p> -->
+            </div>
+        </footer>
+    </body>
+</html>

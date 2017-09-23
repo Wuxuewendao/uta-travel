@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="applicable-device" content="pc,mobile" />
+<meta name="keywords" content="{$lygl.title}"/>
+<meta name="description" content="{$lygl.summary}" />
+<title>{$lygl.title} uta</title>
+<link rel="stylesheet" type="text/css" href="__index__/css/common_1.css"/>
+<link rel="stylesheet" type="text/css" href="__index__/css/content.css"/>
+<script type="text/javascript" src="__index__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__index__/js/lazyload.js"></script>
+</head>
+<body>
+<div class="wraper">
+<div class="header">
+<div class="hd-box">
+<div class="logo"><a href="/"><img src="__index__/picture/logo.png" alt="uta" /></a></div>
+<div class="nav">
+<div class="trigger"></div>
+<ul>
+<li class="active"><a href="{:url('lyglyl')}">旅游攻略</a></li>
+<li><a href="{:url('jd/jdyly')}">旅游景点</a></li>
+</ul>
+</div>
+<div id="search" class="search">
+<form action="{:url('Search/lst')}" method="post" id="hd_form" target="_blank">
+<input type="text" class="input-text" value="" id="hd-input" name="key" placeholder="请输入关键字"/>
+<input type="submit" class="input-button" value="搜索"/>
+</form>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="main">
+<div class="breadcrumb">
+<a href="{;url('index/index')}">uta</a>
+<span>&gt;</span>
+<a href="{:url('Lygl/lyglyl')}">旅游攻略</a>
+<span>&gt;</span>
+<strong>{$lygl.title}</strong>
+</div>
+<div class="box">
+<div class="content" id="content">
+<h1>{$lygl.title} </h1><small style="float:right; color:blue;"><strong> {$lygl.click}次阅读</strong></small>
+<div class="clearfix"></div>
+<!--
+<div class="clearfix info">
+<div class="date">2016-03-02</div>
+<div class="share" id="bdshare">
+<div class="bdsharebuttonbox"></div>
+</div>
+</div>
+-->
+<div class="article">
+<div class="destination">目的地：{$lygl.destination}</div>
+<p>{$lygl.content}</p>
+<p>标签：
+<?php
+            $tags=explode(',', $lygl['tags']);
+            if($tags):
+                foreach($tags as $k=>$tag):
+        ?>
+        <?php if($k!=0) { echo ',';}?><a target="_blank" rel="nofollow" href="{:url('Lygl/glyl',array('type'=>$lygl['type']))}"><?php echo $tag;?></a>
+        <?php endforeach; endif;  ?>
+
+<p>
+上一篇：
+{if condition="$lastgl === null"}
+没有上一篇了
+{else/}
+<a href="{:url('lygl/index',array('id'=>$lastgl['id']))}">{$lastgl.title}</a>
+{/if}
+<br />
+
+下一篇：
+{if condition="$nextgl === null"}
+没有下一篇了
+{else/}
+<a href="{:url('lygl/index',array('id'=>$nextgl['id']))}">{$nextgl.title}</a>
+{/if}
+
+
+
+
+</p>
+<div class="share" id="bdshare">
+<div class="bdsharebuttonbox"></div>
+</div>
+</div>
+</div>
+<div class="side">
+
+<!-- 热门景点推荐 -->
+<div class="recommend">
+<div class="hd">热门景点推荐</div>
+<div class="bd">
+<ul>
+
+{volist name="rmjdArts" id="rmjd"}
+<li><a href="#">{$rmjd.jdname}</a><span>{$rmjd.address}</span></li>
+{/volist}
+
+</ul>
+
+</div>
+</div>
+
+<!-- 旅游攻略推荐 -->
+<div class="recommend">
+<div class="hd">推荐旅游攻略</div>
+<div class="bd">
+<ul>
+{volist name="rmglArts" id="rmgl"}
+<li><a href="#">{$rmgl.title}</a></li>
+{/volist}
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="ft-box">
+<p><a href="{:url('index/index')}">uta旅游网</a> &copy;2017</p>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="__index__/js/common.js"></script>
+<script type="text/javascript">
+bdshare(24);
+$("#content img").lazyload();
+</script>
+<div class="hide">
+<script type="text/javascript" src="__index__/js/see.js"></script>
+<script type="text/javascript" src="__index__/js/tongji.js"></script>
+</div>
+<!--日期：2016-03-02-->
+</body>
+</html>

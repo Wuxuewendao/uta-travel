@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="applicable-device" content="pc,mobile" />
+<title>
+ 搜索结果展示</title>
+<link href="__index__/css/lyglyl.css" type="text/css" rel="stylesheet"/>
+<link href="__index__/css/list.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="__index__/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="wraper">
+<div class="header">
+<div class="hd-box">
+<div class="logo"><a href="/"><img src="__index__/picture/logo.png" alt="联途" /></a></div>
+<div class="nav">
+<div class="trigger"></div>
+<ul>
+<li class="active"><a href="{:url('lygl/lyglyl')}">旅游攻略</a></li>
+<li><a href="{:url('jd/jdyly')}">旅游景点</a></li>
+</ul>
+</div>
+<div id="search" class="search">
+<form action="{:url('Search/lst')}" method="post" id="hd_form" target="_blank">
+<input type="text" class="input-text" value="" id="hd-input" name="key" placeholder="请输入关键字"/>
+<input type="submit" class="input-button" value="搜索"/>
+</form>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="main">
+<div class="breadcrumb">
+<div class="breadcrumb-box">
+<a href="{:url('index/index')}">uta</a>
+<span>&gt;</span>
+
+
+<strong>搜索结果</strong>
+</div>
+<div class="share" id="bdshare">
+<div class="bdsharebuttonbox"></div>
+</div>
+</div>
+
+<div class="list">
+<div class="hd">搜索结果</div>
+<div class="bd">
+<ul>
+{if condition="$artRes['id'])"}
+{volist name="artRes" id="artRes"}
+<li><a href="{:url('lygl/index',array('id'=>$artRes['id']))}" target="_blank">{$artRes.title}</a><span>{$artRes.updatetime | date="m-d ",###}</span></li>
+{/volist}
+{else/}
+没有相关内容
+{/if}
+</ul>
+
+</div>
+
+
+
+
+
+
+</div>
+</div>
+{$page}
+</div>
+
+<div class="footer">
+<div class="ft-box">
+<p><a href="{:url('index/index')}">uta旅游网</a> &copy;2017</p>
+</div>
+</div>
+<script type="text/javascript" src="__index__/js/common.js"></script>
+<script type="text/javascript" src="__index__/js/list.js"></script>
+<script type="text/javascript">
+bdshare();
+</script>
+</div>
+<div class="hide">
+<script type="text/javascript" src="__index__/js/tongji.js"></script>
+</div>
+</body>
+</html>

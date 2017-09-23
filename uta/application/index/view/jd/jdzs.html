@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="applicable-device" content="pc,mobile" />
+<meta name="keywords" content="{$jdzs.jdname}"/>
+<meta name="description" content="{$jdzs.jdname}" />
+<title>{$jdzs.jdname} uta</title>
+<link rel="stylesheet" type="text/css" href="__index__/css/jdzs.css"/>
+<link rel="stylesheet" type="text/css" href="__index__/css/jdcontent.css"/>
+<link rel="stylesheet" type="text/css" href="__index__/css/swiper.css"/>
+<script type="text/javascript" src="__index__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__index__/js/swiper-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="wraper">
+<div class="header">
+<div class="hd-box">
+<div class="logo"><a href="/"><img src="__index__/picture/logo.png" alt="uta" /></a></div>
+<div class="nav">
+<div class="trigger"></div>
+<ul>
+<li><a href="{:url('lygl/lyglyl')}">旅游攻略</a></li>
+<li class="active"><a href="{:url('jdyly')}">旅游景点</a></li>
+</ul>
+</div>
+<div id="search" class="search">
+<form action="{:url('Search/lst1')}" method="post" id="hd_form" target="_blank">
+<input type="text" class="input-text" value="" id="hd-input" name="jdname" placeholder="请输入景点名称"/>
+<input type="submit" class="input-button" value="搜索"/>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="main">
+<div class="breadcrumb">
+<a href="{:url('index/index')}">uta</a>
+<span>&gt;</span>
+<a href="{:url('Jd/jdyly')}">旅游景点</a>
+<span>&gt;</span>
+
+<strong>{$jdzs.jdname}</strong>
+</div>
+
+<div class="content">
+<div class="tit" id="gailan">
+<h1>{$jdzs.jdname}</h1>
+<span></span>
+<div class="scenic_index"><a href="#gailan" rel="nofollow">概览</a><a href="#jieshao" rel="nofollow">景点介绍</a></div>
+</div>
+<div class="info">
+<div class="l">
+<img src="/uta/public/static/jdtjpictures/{$jdzs.imgurl}" />
+<div class="share" id="bdshare">
+<div class="bdsharebuttonbox"></div>
+</div>
+</div>
+<div class="r">
+<!--dengji--><p>级别：{$jdzs.jibie}</p><!--/dengji-->
+<!--address--><p>地址：{$jdzs.address}</p><!--/address-->
+<!--telphone--><p>电话：{$jdzs.tel}</p><!--/telphone-->
+<!--website--><p>官网：<a href="{$jdzs.guanwang}" target="_blank" rel="nofollow">{$jdzs.guanwang}</a></p><!--/website-->
+<!--opentime--><p>开放时间：{$jdzs.kfsj}</p><!--/opentime-->
+<!--menpiao--><p>门票信息：{$jdzs.menpiao}</p><!--/menpiao-->
+</div>
+</div>
+<div class="intro" id="jieshao">
+<p><strong>关于{$jdzs.jdname}</strong></p>
+<p>{$jdzs.summary}</p>
+
+</div>
+
+
+</div>
+</div>
+
+<div class="footer">
+<div class="ft-box">
+<p><a href="{:url('index/index')}">uta旅游网</a> &copy;2017</p>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="__index__/js/common.js"></script>
+<script type="text/javascript" src="__index__/js/slide.js"></script>
+<script type="text/javascript" src="__index__/js/content.js"></script>
+<script type="text/javascript">
+<!--
+bdshare(24);
+//-->
+</script>
+<div class="hide">
+<script type="text/javascript" src="__index__/js/see.js"></script>
+<script type="text/javascript" src="__index__/js/tongji.js"></script>
+</div>
+</body>
+</html>

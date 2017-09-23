@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit"/>
+    <title>更改头像 uta用户中心</title>
+            <link rel="shortcut icon" href="http://static.liantu.cn/image/public/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="http://static.liantu.cn/style/dist/my/common/common.css"/>
+        <link rel="stylesheet" type="text/css" href="http://static.liantu.cn/style/dist/my/public/portrait.css"/>
+        <!-- <script type="text/javascript">
+        var TU = {
+            myUrl: 'http://my.liantu.cn',
+            wwwUrl: 'http://www.liantu.cn'
+        };
+    </script> -->
+</head>
+<body>
+
+<div class="header">
+    <div class="top-bg"></div>
+
+    <div class="mod-head">
+        <a href="{:url('index/index')}" class="logo"><img src="__index__/picture/logo.png" alt="uta"/></a>
+
+                {if condition="$userinfos['status'] eq 1"}
+                <div class="link"><a href="{:url('User/sqym')}" rel="nofollow" target="_blank">申请成为向导</a>
+                </div>
+                {/if}
+
+
+                <div class="login pl-login-info" id="pl-login-info">
+                    <div class="name">
+                                <img width="40" height="40" alt="" src="__index__/uploads/{$userinfos.portrait}"><span class="name-text">{$userinfos.uname} </span><span
+                    class="ico"></span></div>
+            <div class="list">
+                <div class="ico"></div>
+                <div class="login-box">
+                <div class="bg"></div>
+                <p>
+                                        <a href="{:url('User/xxxgy')}">个人信息</a>
+
+                                        <a href="{:url('User/logout')}" class="js-pl-logout">退出</a>
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="home">
+        <a href="{:url('index/index')}">
+            <span class="plus"></span>返回首页
+        </a></div>
+    <div class="wrap">
+        <div class="side">
+            <div class="avatar">
+                <img src="__index__/uploads/{$userinfos.portrait}" alt="用户中心"/>
+
+                <p><span class="usr-name">{$userinfos.uname} {if condition="$userinfos['status'] eq 2"} <span  style="font-size: 13px;"> 导游</span>{/if}</span>
+                    <span class="gender male "></span>
+                </p>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="{:url('User/xxxgy')}" class="info">基本信息</a>
+
+                    <div class="sub-menu">
+                        <p><a href="{:url('User/ghtx')}" class="sc2">更换头像</a></p>
+
+                        <p><a href="{:url('User/change')}" class="sc2">修改密码</a></p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+
+<div class="content">
+    <h2>更改头像</h2>
+
+    <div class="mod-box">
+        <div class="box-portrait" id="j-portrait">
+            <div class="portrait">
+                <div class="pic200"><img src="__index__/uploads/{$userinfos.portrait}"  class="cur-portrait" alt="当前头像" width="200" height="200"/>
+                </div>
+            </div>
+            <form action="{:url('User/ghtx')}" method="post"  enctype="multipart/form-data" >
+                <input  type="file" name="portrait" style="height:30px;margin-left:125px;margin-top: 5px;" />
+                <button type="submit"  value=""  style="width:50px;height:30px;margin-left:125px;">上传</button>
+            </form>
+            <p>请上传 .jpg 或 .gif 或 .png 格式的图片（照片大小需小于2M）</p>
+        </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="http://static.liantu.cn/plugins/jcrop/css/jquery.Jcrop.css" type="text/css"/>
+</div>
+</div>
+<div class="footer">
+
+    <div class="mod-back">
+        <span class="qrcode">
+            <span class="ico"></span>
+            <img src="http://static.liantu.cn/image/public/qrcode.jpg" alt="联途微信二维码" width="200" height="200"/>官方微信服务号
+        </span>
+        <a href="javascript:" class="code" id="code"></a>
+        <a href="/" class="customer"></a>
+        <a href="#" class="goback"></a>
+    </div>
+
+    <div class="mod-foot">
+        <div class="info">
+            <div class="contact">
+                <p class="logo">
+<a href="{:url('index/index')}"><img src="__index__/picture/logo.png" alt="uta" width="136" height="50"/></a>
+<span>同行之路，有你才有意义</span>
+</p>
+<p class="tell">18018961046</p>
+<p>24小时服务热线</p>
+</div>
+<dl>
+<dt>公司信息</dt>
+<dd><a href="{:url('About/guanyu')}" target="_blank"  rel="nofollow">关于我们</a></dd>
+<dd><a href="{:url('About/mianze')}" target="_blank"  rel="nofollow">免责声明</a></dd>
+<dd><a href="{:url('About/lianxi')}" target="_blank"  rel="nofollow">联系我们</a></dd>
+<dd><a href="{:url('About/joinus')}" target="_blank" rel="nofollow">加入我们</a></dd>
+</dl>
+
+
+        </div>
+
+        <div class="copyright">
+            <!-- <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">闽ICP备15007411号-1</a> -->
+            Copyright &copy; 2017 uta旅游网, All Rights Reserved stat
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://static.liantu.cn/script/dist/lib/jquery.seajs.js" id="seajsnode"></script>
+<script type="text/javascript" src="http://static.liantu.cn/plugins/jcrop/js/jquery.jcrop.min.js"></script>
+
+<!-- <script type="text/javascript">
+    seajs.config({
+        base: 'http://static.liantu.cn/script/dist',
+        paths: {
+            'modules': 'http://static.liantu.cn/script/dist'
+        },
+        map: [
+            [/^(.*?\/script\/(?:src|dist)\/.*?\/.*?\.js$)(?:.*)$/i, '$1?version=v1']
+        ],
+        charset: 'utf-8'
+    });
+
+    seajs.use('modules/my/common/common.js');
+
+            seajs.use('modules/my/public/portrait.js');
+        </script> -->
+<!-- <div class="hide">
+    <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?7fb2d3d6f0b9e008b1e5a7fee7b07e3b";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script></div> -->
+</body>
+</html>

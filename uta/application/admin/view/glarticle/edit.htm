@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html><head>
+        <meta charset="utf-8">
+    <title>ThinkPHP5.0</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__admin__/style/bootstrap.css" rel="stylesheet">
+    <link href="__admin__/style/font-awesome.css" rel="stylesheet">
+    <link href="__admin__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__admin__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__admin__/style/demo.css" rel="stylesheet">
+    <link href="__admin__/style/typicons.css" rel="stylesheet">
+    <link href="__admin__/style/animate.css" rel="stylesheet">
+
+    <!-- js文件 -->
+    <script src="__admin__/style/jquery_002.js"></script>
+    <!-- ueditor编辑器引入 -->
+    <script src="__admin__/plus/ueditor/ueditor.config.js"></script>
+    <script src="__admin__/plus/ueditor/ueditor.all.min.js"></script>
+    <script src="__admin__/plus/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+</head>
+<body>
+    <!-- 头部 -->
+    {include file="common/head"}
+    <!-- /头部 -->
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            {include file="common/left"}
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                                        <li>
+                        <a href="{:url('Index/index')}">系统</a>
+                    </li>
+                                        <li>
+                        <a href="{:url('lst')}">攻略文章管理</a>
+                    </li>
+                                        <li class="active">修改攻略文章</li>
+                                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-blue">
+                <span class="widget-caption">修改攻略文章</span>
+            </div>
+            <div class="widget-body">
+                <div id="horizontal-form">
+                    <form class="form-horizontal" role="form" action="" method="post">
+                    <input type="hidden" name="id" value="{$glarts.id}" />
+                         <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">文章标题</label>
+                            <div class="col-sm-6">
+                                <input class="form-control"  placeholder="" name="title" required="required" type="text" value="{$glarts.title}">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">目的地</label>
+                            <div class="col-sm-6">
+                                <input class="form-control"  placeholder="" name="destination"  type="text" value="{$glarts.destination}" >
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">攻略类型</label>
+                            <div class="col-sm-6">
+                                <select name="type" style="width: 100%;">
+                                    <option  value="1" {if condition="$glarts['type'] eq 1"} selected="selected" {/if}> 游玩攻略</option>
+                                     <option  value="2" {if condition="$glarts['type'] eq 2"} selected="selected" {/if}> 美食攻略</option>
+                                      <option  value="3" {if condition="$glarts['type'] eq 3"} selected="selected" {/if}> 住宿攻略</option>
+                                       <option  value="4" {if condition="$glarts['type'] eq 4"} selected="selected" {/if}> 购物攻略</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">攻略简介</label>
+                            <div class="col-sm-6">
+                                <textarea name="summary"  class="form-control" >{$glarts.summary}</textarea>
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">标签:</label>
+                            <div class="col-sm-6">
+                                <input class="form-control"  placeholder="" name="tags"  type="text" value="{$glarts.tags}">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 多个标签请用逗号" , "隔开</p>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">文章内容:</label>
+                            <div class="col-sm-6">
+                                <textarea  placeholder="" name="content"  id="content" >
+                                  {$glarts.content}
+                                </textarea>
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label no-padding-right">点击量</label>
+                            <div class="col-sm-6">
+                                <input class="form-control"  placeholder="" name="click"  type="text" value="{$glarts.click}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">确认修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+    </div>
+
+        <!--Basic Scripts-->
+
+    <script src="__admin__/style/bootstrap.js"></script>
+    <script src="__admin__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__admin__/style/beyond.js"></script>
+    <!-- ueditor -->
+    <script type="text/javascript">
+    // 实例化编辑器
+    UE.getEditor('content',{initialFrameWidth:null,initialFrameHeight:500,});
+    </script>
+
+
+
+</body></html>
